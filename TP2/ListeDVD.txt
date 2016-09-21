@@ -1,0 +1,9 @@
+"LE DERNIER GANG" "LeDernierGang.jpg" "Des premiers larcins aux braquages virtuoses et surmédiatisés \n\r des plus grandes banques parisiennes, l'ascension spectaculaire \n\r de Simon et sa bande, devenue légendaire." 4
+"MY BLUEBERRY NIGHTS" "BlueberryNights.jpg" "Après une rupture douloureuse, \n Elizabeth se lance dans un périple à travers l'Amérique" 5
+"JE SUIS UNE LEGENDE" "Legende.jpg" "Miraculeusement immunisé contre un virus dévastateur" 3
+"300" "300.jpg" "De Zack Snyder avec Gerard Butler, Michael Fassbende, Lena Headey..." 9
+"LE PIANISTE" "LePianiste.jpg" "Wladyslaw Szpilman, brillant pianiste juif polonais, échappe à la déportation." 5
+
+
+
+
