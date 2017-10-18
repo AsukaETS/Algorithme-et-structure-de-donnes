@@ -16,6 +16,7 @@ public class Aquarium
    private ArrayList <Predateur> lesPredateurs;
 
    private Fenetre maFenetre;  //une vue graphique
+   private Fenetre maFenetre2 ;
 
 
    Aquarium (int NbProies, int NbPredateurs)
@@ -29,6 +30,9 @@ public class Aquarium
    	   	
       maFenetre = new Fenetre("Oh qu'est-ce qu'on est serrés ! Au fond de cette boiteuuuh !", 500, 500, this.lesProies, this.lesPredateurs, 0, Color.RED, Color.BLACK); // Creation de la fen tre graphique
         maFenetre.setLocationRelativeTo(null);
+        
+         maFenetre2 = new Fenetre("Blup blup blup", 500, 500, this.lesProies, this.lesPredateurs, 0, Color.CYAN, Color.PINK); // Creation de la fen tre graphique
+        maFenetre2.setLocationRelativeTo(null);
    	
    }
 
@@ -51,6 +55,13 @@ public class Aquarium
          // affichage dans la vue
          maFenetre.mise_a_jour(this.lesProies, this.lesPredateurs, temps); // mise en jour des variables modèle
          maFenetre.repaint(); // on redessine la vue
+         try {
+            Thread.sleep(100);   // on ralentit la simulation 0.1s ici
+         } 
+         catch(InterruptedException e){ }
+         
+         maFenetre2.mise_a_jour(this.lesProies, this.lesPredateurs, temps); // mise en jour des variables modèle
+         maFenetre2.repaint(); // on redessine la vue
          try {
             Thread.sleep(100);   // on ralentit la simulation 0.1s ici
          } 

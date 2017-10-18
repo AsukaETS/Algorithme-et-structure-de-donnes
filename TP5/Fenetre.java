@@ -1,3 +1,5 @@
+package TP5;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -10,7 +12,7 @@ public class Fenetre extends JFrame implements ActionListener
 {
    public static final int ESPACEVITALX = 100;
 	public static final int ESPACEVITALY = 100;
-   // 3 panneaux constituant la fenêtre    
+   // 3 panneaux constituant la fenï¿½tre    
    private JPanel zoneDessin;            // zone de dessin central ou on va dessiner
    private JPanel p1;                    // zone boutons hauts
    private JPanel p2;                    // zone boutons bas  
@@ -19,7 +21,7 @@ public class Fenetre extends JFrame implements ActionListener
    private Color cPredateurs; 
    
     
-   // Structure de données à afficher
+   // Structure de donnÃ©es Ã  afficher
 	private ArrayList <Proie> lesProies;
 	private ArrayList <Predateur> lesPredateurs;
    private int temps;
@@ -30,7 +32,7 @@ public class Fenetre extends JFrame implements ActionListener
     public Fenetre(String titre, int largeur, int hauteur, ArrayList proies, ArrayList predateurs, int temps, Color couleurProies, Color couleurPredateurs) 
     {
          super(titre);
-        // placer ici l'initialisation de vos structures de données ------------------------------        
+        // placer ici l'initialisation de vos structures de donnï¿½es ------------------------------        
          this.lesProies = proies;
    		this.lesPredateurs = predateurs;
          this.temps = temps;
@@ -38,7 +40,7 @@ public class Fenetre extends JFrame implements ActionListener
          this.cPredateurs = couleurPredateurs;
    	
         //----------------------------------------------------------------------------------------
-        // Construction de la fenêtre
+        // Construction de la fenï¿½tre
         getContentPane().setLayout(new BorderLayout());
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -52,7 +54,7 @@ public class Fenetre extends JFrame implements ActionListener
     }
     
 
-// ASSEMBLAGE PARTIES FENETRE : la fenetre est constituée de trois parties Panel Nord : boutons ; Sud : boutons; Centre: zone de zoneDessin
+// ASSEMBLAGE PARTIES FENETRE : la fenetre est constituï¿½e de trois parties Panel Nord : boutons ; Sud : boutons; Centre: zone de zoneDessin
     public void mise_en_page(int maxX, int maxY) 
     {
         //--------------------------------------------------------------------
@@ -89,8 +91,8 @@ public class Fenetre extends JFrame implements ActionListener
       
     }
 
-// AFFICHAGE A L ECRAN : tout ce qui est dans le paint() sera à l'ecran   
-    public void paint(Graphics g)  // dessin de la fenêtre générale
+// AFFICHAGE A L ECRAN : tout ce qui est dans le paint() sera Ã  l'ecran   
+    public void paint(Graphics g)  // dessin de la fenÃªtre gÃ©nÃ©rale
     {
          this.p1.repaint();  // on redessine les boutons hauts
          this.p2.repaint();  // on redessine les boutons bas
@@ -99,15 +101,15 @@ public class Fenetre extends JFrame implements ActionListener
         
 	      effacer();
          
-         // c'est ici qu'il faut mettre les elements à afficher
+         // c'est ici qu'il faut mettre les elements Ã  afficher
          g.drawString( "Temps:  "+this.temps+"  NbProies :  "+this.lesProies.size()+"  NbPredateurs:   "+this.lesPredateurs.size(), 100, 20 );
 	
-		   g.setColor( Color.pink );
+		   g.setColor(this.cProies);
 		   for( int j=0; j< this.lesProies.size(); j++)
 		   {
 		   	g.fillOval(50+(this.lesProies.get(j)).getX()*4  , 50+(this.lesProies.get(j)).getY()*4, 4,4);
 		   }
-         g.setColor( Color.cyan );
+                    g.setColor(this.cPredateurs);
 		   for( int j=0; j< this.lesPredateurs.size(); j++)
 		   {
 		   	g.fillOval(50+(this.lesPredateurs.get(j)).getX()*4  , 50+(this.lesPredateurs.get(j)).getY()*4, 4,4);
@@ -120,7 +122,7 @@ public class Fenetre extends JFrame implements ActionListener
 
 // QUELQUES OUTILS
    
-    // Procédure d'arrêt
+    // Procï¿½dure d'arrï¿½t
     void quitter() {
         System.exit(0);
     }
@@ -142,7 +144,7 @@ public class Fenetre extends JFrame implements ActionListener
     
        
        
-// GESTION DES ACTIONS SUITE A UN APPUIS SUR BOUTON : cette methode est declenchée si Un bouton quelconque est appuyé
+// GESTION DES ACTIONS SUITE A UN APPUIS SUR BOUTON : cette methode est declenchï¿½e si Un bouton quelconque est appuyï¿½
     public void actionPerformed(ActionEvent e)  // on associe l'evenement souris sur bouton avec l'execution d'un sous prg
 	 {
       String c = e.getActionCommand();     // on capte l'evenement : nom du bouton !
