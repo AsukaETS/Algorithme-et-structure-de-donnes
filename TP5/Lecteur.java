@@ -1,3 +1,5 @@
+package TP5;
+
 import java.util.ArrayList;
 
 public class Lecteur
@@ -32,7 +34,7 @@ public class Lecteur
 
 abstract class Element
 {
-	public abstract void afficher(int degré);
+	public abstract void afficher(int degrÃ©);
 
 	protected void tab(int i )
 	{

@@ -1,8 +1,10 @@
+package TP5;
+
 public class Predateur
 {
 private int x, y, pasX, pasY;
 
-private int duréeVie;
+private int durÃ©eVie;
 private int gaugeFaim;
 
 
@@ -18,7 +20,7 @@ Predateur (int xx, int yy)
 	this.x = xx;
 	this.y = yy;
 
-	this.duréeVie = DUREEVIE;
+	this.durÃ©eVie = DUREEVIE;
 	this.gaugeFaim = Aleatoire(30,60);
 	this.pasX = Aleatoire( -2, 2 );
 	this.pasY = Aleatoire( -2, 2 );
@@ -27,7 +29,7 @@ Predateur (int xx, int yy)
 
 public int getX() { return this.x; }
 public int getY() { return this.y; }
-public int getVie() { return this.duréeVie; }
+public int getVie() { return this.durÃ©eVie; }
 public int getFaim() {return this.gaugeFaim ; } 
 
 public void deplacement()
@@ -39,13 +41,13 @@ public void deplacement()
 	if (this.x >ESPACEVITALX) { this.x =ESPACEVITALX; this.pasX= -this.pasX;}
 	if (this.y >ESPACEVITALY) { this.y =ESPACEVITALY; this.pasY= -this.pasY;}
 	
-	this.duréeVie--;
+	this.durÃ©eVie--;
 	this.gaugeFaim--;  							 // il depense de l'energie 
 	
 	if (this.gaugeFaim <=0) 					 // faim ?
 	{
-		 this.duréeVie=0;							 //il meurt	
-		 System.out.println("Predateur meurt de faim");	
+		 this.durÃ©eVie=0;							 //il meurt	
+		 System.out.println("RIP PREDATEUR OMG RT SI T TRIST");	
 	}
 
 }

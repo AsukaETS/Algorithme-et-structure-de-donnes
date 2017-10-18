@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.awt.*;
 import java.util.Iterator;
 
-public class Aquarium
-{
+public class Aquarium {
 
    public static final int PASMAXPROIES = 4;
    public static final int ESPACEVITALX = 100;
