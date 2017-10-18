@@ -27,7 +27,8 @@ public class Aquarium
          for (int i =0; i<NbPredateurs; i++) {
          this.lesPredateurs.add( new Predateur( Aleatoire(0, ESPACEVITALX) , Aleatoire(0, ESPACEVITALY) )  ); }
    	   	
-      maFenetre = new Fenetre("Proies Predateurs", 500, 500, this.lesProies, this.lesPredateurs, 0, Color.RED, Color.BLACK); // Cr�ation de la fen�tre graphique
+      maFenetre = new Fenetre("Oh qu'est-ce qu'on est serrés ! Au fond de cette boiteuuuh !", 500, 500, this.lesProies, this.lesPredateurs, 0, Color.RED, Color.BLACK); // Creation de la fen tre graphique
+        maFenetre.setLocationRelativeTo(null);
    	
    }
 
@@ -109,15 +110,15 @@ public class Aquarium
    		
    }
    	
-   private void reproProies()
+    private void reproProies()
    {
       ArrayList <Proie> bebe = new ArrayList();
       for (int i = 0; i < this.lesProies.size(); i++) {
          for (int j = 0; j < this.lesProies.size(); j++) {
             if (this.lesProies.get(i).getX() == this.lesProies.get(j).getX() && 
                 this.lesProies.get(i).getY() == this.lesProies.get(j).getY() &&
-                this.lesProies.get(i).getVie()<= 250 &&
-                this.lesProies.get(j).getVie() <= 250 &&
+                this.lesProies.get(i).getVie()<= 300 &&
+                this.lesProies.get(j).getVie() <= 300 &&
                 i != j ) {
                int al = Aleatoire(1,2) ;
                if (al == 1) {
@@ -144,8 +145,8 @@ public class Aquarium
          for (int j = 0; j < this.lesPredateurs.size(); j++) {
             if (this.lesPredateurs.get(i).getX() == this.lesPredateurs.get(j).getX() && 
                 this.lesPredateurs.get(i).getY() == this.lesPredateurs.get(j).getY() &&
-                this.lesPredateurs.get(i).getVie()<= 100 &&
-                this.lesPredateurs.get(j).getVie() <= 100 &&
+                this.lesPredateurs.get(i).getVie()<= 75 &&
+                this.lesPredateurs.get(j).getVie() <= 75 &&
                 i != j ) {
                int al = Aleatoire(1,2) ;
                if (al == 1) {
@@ -164,8 +165,6 @@ public class Aquarium
          lesPredateurs.add(bebe.get(x)) ;
       }
    }
-
-   	
    	
    private int Aleatoire( int min, int max )
    {
