@@ -1,3 +1,5 @@
+package TD6;
+
 
 
 public abstract class Liste  
@@ -26,7 +28,7 @@ public abstract class Liste
 
    public abstract Liste inserer(String s , int rang );
 	
-//	public abstract Liste intersection( Liste L );
+   public abstract Liste intersection( Liste L );
 	
 //	public abstract Liste union( Liste L );
 	
@@ -100,9 +102,17 @@ class ListeVide extends Liste   // permet d'avoir une sentinelle permettant d'id
       return new ListeVide() ;
    }
    
-   /*public Liste intersection (Liste L) {
+   public Liste intersection (Liste L) {
+       return new ListeVide() ;
+   }
    
-   }*/
+   public Liste union (Liste L) {
+       return new ListeVide() ;
+   }
+   
+   public boolean inclus (Liste L) {
+       return false ;
+   }
 
 }
 
@@ -186,7 +196,13 @@ class ListeCons extends Liste
       }
    }
    
-  /* public Liste intersection (Liste L) {
+   public Liste intersection (Liste L) {
+        if (L.trouver(this.getPremier()))
+            return new ListeCons(this.getPremier(), this.getReste().intersection(L.getReste()));
+         return this.getReste().intersection(L);
+   }
    
+   /*public Liste union (Liste L) {
+       
    }*/
 }
